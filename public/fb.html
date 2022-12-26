@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>ĐỘNG THƠ | TRANG CHỦ</title>
+	<script src ="angular/angular.min.js"></script>
+	<script src ="angular/controller.js"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+        <script src='https://cdn.firebase.com/v0/firebase'></script>
+</head>
+
+<script >
+
+
+	var myDataDef = new firebase("https://angular-4c414-default-rtdb.firebaseio.com/");
+	 var fb  = firebase.initializeApp(firebaseConfig);
+	myDataDef.push("kkk");
+	</script>
+
+
+
+<body ng-app="myApp" ng-controller="myCtrl"> <!-- ng-app giúp -->
+	<h1> web chat </h1>
+First Name: <input type="text" ng-model="name"><br>
+Last Name: <input type="text" ng-model="content" onkeypress="add()"><br>
+</body>
+</html>

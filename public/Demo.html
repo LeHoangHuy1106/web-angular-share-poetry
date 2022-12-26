@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>THI THƠ | Trang Chủ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+    
+        <!-- AngularJS -->
+
+
+      <link rel="stylesheet" type="text/css" href="style.css">
+
+
+   </head>
+   <body  ng-app="appName" ng-controller="MainCtrl" >
+
+      <!-- Start: Navigation with Button -->
+      <nav class="navbar navbar-light navbar-expand-md text-center navigation-clean-button menu " >
+         <div class="container">
+            <a class="navbar-brand" href="!#/DanhSach"><img src="img/logo.png" class="w-25 h-25 m-auto" >&nbsp;</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-start w-100" id="navcol-1" style="border-style: solid;">
+               <ul class="navbar-nav me-auto m-auto">
+                  <li class="nav-item"><a class="nav-link active" href="#!/DanhSach">TRANG CHỦ</a></li>
+                  <li class="nav-item"><a class="nav-link " href="#!/TacGia">TÁC GIẢ</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#!/TheLoai">THỂ LOAI</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#!/ChuDe">CHỦ ĐỀ</a> </li>
+               </ul>
+         <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    THÊM
+                  </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#!/ThemTacGia"">Tác Giả</a></li>
+                <li><a class="dropdown-item" href="#!/ThemTho"">Tác Phẩm</a></li>
+           
+              </ul>
+            </div>
+
+            </div>
+         </div>
+      </nav>
+      <!-- End: Navigation with Button --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="container main">
+            <div class="row w-100">
+                <div class="col-12  col-md-3  main-left">
+                   
+                    <br>
+                    <br>
+                    
+                    <div class="infoTacGia" >
+                        <h5 class= "text-center m-autoS">THÔNG TIN TÁC GIẢ</h5>
+
+                        <table class="table" >
+                            <tbody>
+                               <tr>
+                                  <td>Tác Giả:</td>
+                                  <td ng-model="tacgia">{{tacgia}}</td>
+                               </tr>
+                               
+                                <tr >
+                                    <td>Quốc Gia</td>
+                                    <td ng-model="quocgia">{{quocgia}}</td>
+                                </tr>
+                                <tr >
+                                    <td>Tiểu sử</td>
+                                    <td ng-model="tieusu"> {{tieusu}}</td>
+                                </tr>
+                                
+
+                            </tbody>
+                        </table>
+                     
+                    </div>
+                    <div class="infoTacGia">
+                        <h5 class= "text-center m-autoS">THÔNG TIN TÁC PHẨM</h5>
+
+                        <table class="table">
+                            <tbody>
+                               <tr>
+                                  <td>Năm sáng tác:</td>
+                                  <td>{{namsangtac}}</td>
+                               </tr>
+
+                                <tr>
+                                    <td>Thể loại:</td>
+                                    <td>{{theloai}}</td>
+                                </tr>
+
+                            
+                            </tbody>
+                        </table>
+                     
+                    </div>
+
+                    <div class="tag">
+                        <h5 class= "text-center m-autoS">THẺ</h5>
+                        <div ng-repeat="item in chude">
+                            <a href="#" class="badge badge-info  badge-tag">{{item[0].tenChuDe}}</a>
+                            
+                        </div>
+
+
+
+                    </div>
+
+                    
+                    
+                        
+                </div>
+                <div class="col-12 col-md-6 main-center ">
+
+
+                      <div class="thongbao">
+                        
+                         
+
+
+          
+
+
+
+
+
+                </div>
+                <div class="col-12 option  col-md-3 main-right ">
+                    <br>
+                    <i ng-click="loc()"class="fas fa-filter m-25"></i>
+                    <i ng-click="xoa()"class="fas fa-calendar-times m-25"></i> 
+                    <i ng-click="sua()"class="fas fa-tools m-auto m-25"></i> 
+            
+
+                    <div class="search">
+
+                        <input type="search"ng-model="search" placeholder="Nhập từ bạn cần tìm?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+
+                    </div>
+                    <div class="thoMoiDang">
+                        <br>
+                        <br>
+                        <h4 class="text-center"><i>Thơ Mới Đăng</i></h4>
+                        <ul class="list-group">
+                            <li class="list-group-item item">Truyên Kiều - Nguyễn Du</li>
+                            <li class="list-group-item item">Đường về Hoàng Hôn - BNA</li>
+                            <li class="list-group-item item ">Đi rồi - BNA</li>
+                          </ul>
+                    </div>
+                    <br>
+                    <div class="tacPhamCungTacGia">
+                        <h5 class= "text-center m-autoS">CÙNG TÁC GIẢ</h5>
+                        <table class="table">
+
+                            <ul class="list-group">
+                                <li class="list-group-item item">Truyên Kiều - Nguyễn Du</li>
+                                <li class="list-group-item item">Đường về Hoàng Hôn - BNA</li>
+                                <li class="list-group-item item ">Đi rồi - BNA</li>
+                              </ul>
+                        </table>
+                     
+                    </div>
+
+                   
+       
+                </div>
+            </div>
+      </div>
+
+<div id="myModal"  class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Bạn chắc chắn múa xóa?</h4>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Canncel</button>
+        <button ng-click="XacNhan()" type="button" class="btn btn-primary "data-dismiss="modal">Yes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+   </body>
+         <script type="text/javascript" src="angular/controller.js"></script>
+</html>

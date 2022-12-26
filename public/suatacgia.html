@@ -1,0 +1,33 @@
+          <div class="themTacGia" ng-model="messsua">
+                        <div class="addtho w-75 m-auto">
+                            <br>
+                            <h3 class="text-center">SỬA THÔNG TIN TÁC GIẢ</h3>
+                           <div class="form-group">
+                                <label class="" >Tên Tác Gỉa</label>
+                                <input ng-model="tacgia.tenTacGia" type="text" class="form-control">
+                                <label class="" >Năm Sinh</label>
+                                <input ng-model="tacgia.namSinh" type="number" class="form-control">
+                                <label class="" >Năm Mất</label>
+                                <input ng-model= "tacgia.namMat" type="text" class="form-control">
+                                 <label class="" >Quốc Gia</label>
+                                <input ng-model="tacgia.quocGia" type="text" class="form-control">
+                                 <label class="" >Tiểu Sử</label>
+                                  <textarea  ng-model="tacgia.tieuSu" class="form-control"  id="comment"></textarea>
+
+                            
+                            </div>
+                                 <br>
+                                    <a href="#!/TacGia"> <button  ng-click="Sua()"  class=" w-50 btn btn-success">Trở về</button></a>
+
+                                     <button  ng-click="SuaTacGia()"  class=" w-50 float-left btn btn-danger">Sửa</button>
+
+
+
+                                        <br>
+                                        <br>
+                                  <div class="alert alert-danger">
+                                     <strong>{{mess}}</strong> 
+                                   </div>
+                        </div>
+                             
+            </div>

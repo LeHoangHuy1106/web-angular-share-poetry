@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>THI THƠ | Trang Chủ</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+    
+        <!-- AngularJS -->
+
+
+      <link rel="stylesheet" type="text/css" href="style.css">
+
+
+   </head>
+   <body  ng-app="appName" ng-controller="MainCtrl" >
+
+      <!-- Start: Navigation with Button -->
+
+      <nav class="navbar navbar-light navbar-expand-md text-center navigation-clean-button menu " >
+         <div class="container">
+            <br>
+            <br>
+            <br>
+            <a class="navbar-brand" href="!#/DanhSach"><img src="img/logo.png" class="w-100 h-100 m-auto" >&nbsp;</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse text-start w-100" id="navcol-1" style="border-style: solid;">
+               <ul class="navbar-nav me-auto m-auto">
+                  <li class="nav-item"><a class="nav-link active" href="#!/DanhSach">TRANG CHỦ</a></li>
+                  <li class="nav-item"><a class="nav-link " href="#!/TacGia">TÁC GIẢ</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#!/TheLoai">THỂ LOAI</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#!/ChuDe">CHỦ ĐỀ</a> </li>
+               </ul>
+         <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    THÊM
+                  </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#!/ThemTacGia"">Tác Giả</a></li>
+                <li><a class="dropdown-item" href="#!/ThemTho"">Tác Phẩm</a></li>
+           
+              </ul>
+            </div>
+
+            </div>
+         </div>
+      </nav>
+      <!-- End: Navigation with Button --><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="container main">
+            <div class="row w-100 m-auto">
+                <div class="col-12  col-md-3  main-left">
+                   
+                    <br>
+                    <br>
+                    
+                    <div class="infoTacGia" >
+                        <h5 class= "text-center m-auto">THÔNG TIN TÁC GIẢ</h5>
+
+                        <table class="table" >
+                            <tbody>
+                               <tr>
+                                  <td>Tác Giả:</td>
+                                  <td ng-model="NDtacgia">{{NDtacgia}}</td>
+                               </tr>
+                               
+                                <tr >
+                                    <td>Quốc Gia</td>
+                                    <td ng-model="NDquocgia">{{NDquocgia}}</td>
+                                </tr>
+                                <tr >
+                                    <td>Tiểu sử</td>
+                                    <td ng-model="tieusu"> {{NDtieusu}}</td>
+                                </tr>
+                                
+
+                            </tbody>
+                        </table>
+                     
+                    </div>
+                    <div class="infoTacGia">
+                        <h5 class= "text-center m-auto">THÔNG TIN TÁC PHẨM</h5>
+
+                        <table class="table">
+                            <tbody>
+                               <tr>
+                                  <td>Năm sáng tác:</td>
+                                  <td>{{namsangtac}}</td>
+                               </tr>
+
+                                <tr>
+                                    <td>Thể loại:</td>
+                                    <td>{{theloai}}</td>
+                                </tr>
+
+                            
+                            </tbody>
+                        </table>
+                     
+                    </div>
+
+                    <div class="tag">
+                        <h5 class= "text-center m-auto">THẺ</h5>
+                        <div ng-repeat="item in NDchude">
+                            <a href="#!/DanhSach" ng-click="chonChuDe(item)"  class="badge badge-info  badge-tag">{{item.tenChuDe}}</a>
+                            
+                        </div>
+
+
+
+                    </div>
+
+                    
+                    
+                        
+                </div>
+                <div class="col-12 col-md-6 main-center ">
+                    
+
+                    <div ng-view >
+                        
+           
+
+
+
+
+
+                    </div>
+
+          
+
+
+
+
+
+                </div>
+                <div class="col-12 option  col-md-3 main-right ">
+                    <br>
+                    <i ng-click="changeFilter=!changeFilter" class="fas fa-filter m-25"></i>
+                    <i ng-click="xoa()"class="fas fa-calendar-times m-25"></i> 
+                    <i ng-click="sua()"class="fas fa-tools m-auto m-25"></i> 
+            
+
+                    <div class="search">
+
+                        <input type="search"ng-model="search" placeholder="Nhập từ bạn cần tìm?" aria-describedby="button-addon1" class="form-control border-0 bg-light">
+
+                    </div>
+                    <div class="thoMoiDang">
+                        <br>
+                        <br>
+                        <h4 class="text-center"><i>Thơ Mới Đăng</i></h4>
+
+                        <ul ng-repeat="item in danhSachNew |orderBy:'-'" class="list-group"                       
+                               <a  href="#!/NoiDung" ng-click="xemnoidung(item)"> <li class="list-group-item item">{{item.tenBaiTho}} <i>{{item.tacGia}}</i> </a>
+                          </ul>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <br>
+                    <div class="tacPhamCungTacGia">
+                        <h5 class= "text-center m-autoS">CÙNG TÁC GIẢ</h5>
+                        
+
+                        <ul ng-repeat="item in NDcungTacGia" class="list-group"       
+                            <a  href="#!/NoiDung" ng-click="xemnoidung(item)"> <li class="list-group-item item">{{item.tenBaiTho}} <i>{{item.tacGia}}</i> </a>
+                          </ul>
+                        
+                     
+                    </div>
+
+                   
+       
+                </div>
+            </div>
+      </div>
+      <footer class="footer-basic m-auto" style="background:rgba(184, 113, 168, 0.356);">
+        <!-- Start: Social Icons -->
+        <p class="copyright color m-auto">Company Name © 2021</p>
+        <!-- End: Social Icons --><!-- Start: Links -->
+        <ul class="list-inline">
+
+
+        <!-- End: Links --><!-- Start: Copyright -->
+      
+        <!-- End: Copyright -->
+                   <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+                      <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+        </ul>
+     </footer>
+
+
+   </body>
+         <script type="text/javascript" src="angular/controller.js"></script>
+</html>

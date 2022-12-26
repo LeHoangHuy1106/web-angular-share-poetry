@@ -1,0 +1,23 @@
+<div class="danhsachTacGia">
+	<br>
+	<br>
+	<h3 class="text-center text-danger"> DANH SÁCH CHỦ ĐỀ</h3>
+
+
+		<div ng-repeat="item in danhSachChuDe|orderBy: !changeFilter ? '-tenChuDe' : 'tenChuDe'| filter: search  track by $index">
+				<div class="chude">
+					
+
+				<a href="#!/DanhSach" ng-click="chonChuDe(item)" class="badge badge_tacgia  badge-danger text-center">{{item.tenChuDe}}</a>
+		
+				<a href="#!/ThongBao" ng-show="showXoa" ng-click="ChonXoa(item.stt,'chude')" > <i  class="fas fa-trash-alt"></i></a>
+			
+
+
+				</div>
+		</div>
+
+
+</div>
+
+

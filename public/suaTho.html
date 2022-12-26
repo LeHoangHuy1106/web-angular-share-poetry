@@ -1,0 +1,55 @@
+ <div class="addtho w-75 m-auto">
+                        <br>
+                            <h3 class="text-center">SỬA NỘI DUNG</h3>
+                           <div class="form-group">
+                              <label  >Tên Bài Thơ</label>
+                              <input  ng-model="tho.tenBaiTho" type="text" class="form-control">
+                              <label class="" >Năm sáng tác</label>
+                              <input  ng-model="tho.namSangTac" type="number" class="form-control">
+                             <label class="" >Tác Giả</label>
+                             <select  ng-selected='tho.tacGia' ng-model="tho.tacGia" class="form-select" aria-label="Default select example"ng-model="danhSachTacGia.model">
+                             
+                                    <option ng-model="tho.tenTacGia" ng-repeat="option in danhSachTacGia" value={{option.tenTacGia}}>{{option.tenTacGia}}</option>
+                               
+                                </select>
+                            <label class="" >Thể Loại</label>
+                             <select  ng-model="tho.theLoai" ng-selected='tho.theLoai' class="form-select" aria-label="Default select example">
+                                  <option value ="" selected>Open this select menu</option>
+                                  <option value="Thơ lục bát">Thơ lục bát</option>
+                                  <option value="Thơ tứ ngôn">Thơ tứ ngôn</option>
+                                  <option value="Thơ ngũ ngôn">Thơ ngũ ngôn</option>
+                                    <option value="Thơ thất ngôn">Thơ thất ngôn</option>
+                                  <option value="Thơ tự do">Thơ tự do</option>
+                                  <option value="Thơ thất ngôn bát cú">Thơ thất ngôn bát cú</option>
+                                  <option value="Thơ Thất Ngôn tứ tuyệt">Thơ Thất Ngôn tứ tuyệt</option>
+
+
+                                </select>
+                                <br>
+                                <label class="" >Nội Dung</label>
+
+                                  <textarea  ng-model="tho.noiDung" class="form-control"  id="comment"></textarea>
+
+                                
+                                <div id="tagchude">
+
+                                </div>
+
+
+                                </div>
+
+
+                                <br>
+                              
+                                     <button  ng-click="SuaTho()"  class=" w-50 float-left btn btn-danger">Sửa</button>
+
+                                     <a href="#!/DanhSach"> <button  ng-click="Sua()"  class=" w-50 btn btn-success">Trở về</button></a>
+                                 <br>
+                                <br>
+                                  <div class="alert alert-danger">
+                                     <strong>{{mess}}</strong> 
+                                   </div>
+                           </div>
+
+                    </div>
+                        

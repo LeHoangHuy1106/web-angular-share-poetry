@@ -1,0 +1,59 @@
+ <div class="addtho w-75 m-auto">
+                        <br>
+                            <h3 class="text-center">THÊM THƠ MỚI</h3>
+                           <div class="form-group">
+                              <label  >Tên Bài Thơ</label>
+                              <input  ng-model="tenbaitho" type="text" class="form-control">
+                              <label class="" >Năm sáng tác</label>
+                              <input  ng-model="namsangtac" type="number" class="form-control">
+                             <label class="" >Tác Giả</label>
+                             <select  ng-model="tacgia" class="form-select" aria-label="Default select example"ng-model="danhSachTacGia.model">
+                             
+                                    <option ng-repeat="option in danhSachTacGia" value={{option.tenTacGia}}>{{option.tenTacGia}}</option>
+                               
+                                </select>
+                            <label class="" >Thể Loại</label>
+                             <select  ng-model="theloai" class="form-select" aria-label="Default select example">
+                                  <option value ="" selected>Open this select menu</option>
+                                  <option value="Thơ lục bát">Thơ lục bát</option>
+                                  <option value="Thơ tứ ngôn">Thơ tứ ngôn</option>
+                                  <option value="Thơ ngũ ngôn">Thơ ngũ ngôn</option>
+                                    <option value="Thơ thất ngôn">Thơ thất ngôn</option>
+                                  <option value="Thơ tự do">Thơ tự do</option>
+                                  <option value="Thơ thất ngôn bát cú">Thơ thất ngôn bát cú</option>
+                                  <option value="Thơ Thất ngôn tứ tuyệt">Thơ Thất ngôn tứ tuyệt</option>
+
+
+                                </select>
+                                <br>
+                                <label class="" >Nội Dung</label>
+
+                                  <textarea  ng-model="noidung" class="form-control"  id="comment"></textarea>
+
+                                <label class="" >Chủ đề</label>
+                                <div class="form-group">
+                                    
+                                    <input type="search" ng-model="tagchude"class="form-control w-75 float-left">
+                                     <button type="submit" class="w-25 btn btn-success" ng-click="addtag()" >add</button>
+                                     <br>
+                                     <br>
+                                <div id="tagchude">
+
+                                </div>
+
+
+                                </div>
+
+
+                                <br>
+                              
+                              <button ng-click ="themtho()"type="submit" class=" w-100 btn btn-danger">Thêm</button>
+                                 <br>
+                                <br>
+                                  <div class="alert alert-danger">
+                                     <strong>{{mess}}</strong> 
+                                   </div>
+                           </div>
+
+                    </div>
+                        

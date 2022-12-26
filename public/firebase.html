@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+    <title>Firebase App</title>
+</head>
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/0.9.0/angularfire.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyBqKcDmnRUYGmw-4kqXTl2b30OzlCsBmxc",
+  authDomain: "angular-4c414.firebaseapp.com",
+  databaseURL: "https://angular-4c414-default-rtdb.firebaseio.com",
+  projectId: "angular-4c414",
+  storageBucket: "angular-4c414.appspot.com",
+  messagingSenderId: "1004230537180",
+  appId: "1:1004230537180:web:55da2224b90556b0642919",
+  measurementId: "G-RPEM5DWVN0"
+};
+
+firebase.initializeApp(firebaseConfig);
+var ref = new Firebase("https://angular-4c414-default-rtdb.firebaseio.com");
+
+</script>
+ 
+<body ng-app="app">
+    <h1>Firebase chatbox</h1>
+    <div ng-controller="chatCtrl">
+      <input  id="them">
+      <button onclick= "addata()">thêm vô</button>
+
+    </div>
+</body>
+<script>
+function addata() {
+let arr = [];
+var leadsRef = ref.child('ChuDe');
+leadsRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var childData = childSnapshot.val();
+      arr.push(childData);
+    });
+});
+console.log(arr);
+}
+
+
+var app = angular.module('app', ['firebase']);
+app.controller('chatCtrl', ['$scope', '$firebase', function($scope, $firebase) {
+
+
+
+
+}]);
+</script>
+ 
+</html>
